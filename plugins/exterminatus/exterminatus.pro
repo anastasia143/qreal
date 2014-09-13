@@ -15,3 +15,9 @@ HEADERS = \
 
 SOURCES = \
 	exterminatusPlugin.cpp \
+
+SUBDIRS += \
+    ../databases/databases.pro
+
+OTHER_FILES += \
+    ../databases/databasesMetamodel.xml

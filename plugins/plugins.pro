@@ -27,6 +27,7 @@ SUBDIRS += \
 # QReal:BP
 SUBDIRS += \
 #	bpmn/bpmn.pro \
+	databases/databases.pro \
 #	rulesChecker/rulesChecker.pro \
 #	classDiagram/classDiagram.pro \
 
