@@ -15,18 +15,9 @@
             <port name="GatewayLeft"/>
             <port name="GatewayVertical"/>
             <port name="GatewayRight"/>
-            <port name="TaskLeft"/>
-            <port name="TaskVertical"/>
-            <port name="TaskRight"/>
             <port name="SubprocessLeft"/>
             <port name="SubprocessVertical"/>
             <port name="SubprocessRight"/>
-            <port name="EventSubprocessLeft"/>
-            <port name="EventSubprocessVertical"/>
-            <port name="EventSubprocessRight"/>
-            <port name="TaskLeft"/>
-            <port name="TaskVertical"/>
-            <port name="TaskRight"/>
 			<port name="DataLeft"/>
 			<port name="DataVertical"/>
 			<port name="DataRight"/>
@@ -116,9 +107,7 @@
                          <contains type="BPMNDiagram::IntermediateEvent"/>
                          <contains type="BPMNDiagram::EndEvent"/>
                          <contains type="BPMNDiagram::Gateway"/>
-                         <contains type="BPMNDiagram::Task"/>
                          <contains type="BPMNDiagram::Subprocess"/>
-                         <contains type="BPMNDiagram::EventSubprocess"/>
                          <contains type="BPMNDiagram::SequenceFlow"/>
                          <contains type="BPMNDiagram::SignalBoundaryEvent"/>
                          <contains type="BPMNDiagram::TimerBoundaryEvent"/>
@@ -498,105 +487,6 @@
                     </properties>
                 </logic>
             </node>
-            <node name="Task" displayedName="Task">
-                <graphics>
-                    <picture sizex="210" sizey="160">
-                        <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="45" y2="115" fill-style="none" x1="18" x2="18"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="18" y2="18" fill-style="none" x1="45" x2="165"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="45" y2="115" fill-style="none" x1="192" x2="192"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="142" y2="142" fill-style="none" x1="45" x2="165"/>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" fill-style="none">
-                            <start startx="18" starty="45"/>
-                            <end endx="45" endy="18"/>
-                            <ctrl x="15" y="15"/>
-                        </curve>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" fill-style="none">
-                            <start startx="192" starty="45"/>
-                            <end endx="165" endy="18"/>
-                            <ctrl x="195" y="15"/>
-                        </curve>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" fill-style="none">
-                            <start startx="165" starty="142"/>
-                            <end endx="192" endy="115"/>
-                            <ctrl x="195" y="145"/>
-                        </curve>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" fill-style="none">
-                            <start startx="18" starty="115"/>
-                            <end endx="45" endy="142"/>
-                            <ctrl x="15" y="145"/>
-                        </curve>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="117" fill="#ffffff" y2="133" stroke="#000000" x1="80" x2="80">
-                            <showIf value="Multiple Instances (Parallel)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="117" fill="#ffffff" y2="133" stroke="#000000" x1="90" x2="90">
-                            <showIf value="Multiple Instances (Parallel)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="117" fill="#ffffff" y2="133" stroke="#000000" x1="100" x2="100">
-                            <showIf value="Multiple Instances (Parallel)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="115" fill="#ffffff" y2="115" stroke="#000000" x1="82" x2="98">
-                            <showIf value="Multiple Instances (Sequential)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="125" fill="#ffffff" y2="125" stroke="#000000" x1="82" x2="98">
-                            <showIf value="Multiple Instances (Sequential)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="135" fill="#ffffff" y2="135" stroke="#000000" x1="82" x2="98">
-                            <showIf value="Multiple Instances (Sequential)" property="loopType" sign="="/>
-                        </line>
-                        <ellipse fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="115" y2="135" fill-style="none" x1="80" x2="100">
-							<showIf value="Standard Loop" property="loopType" sign="="/>
-						</ellipse>
-                        <line stroke-style="solid" fill-style="none" stroke-width="0" y1="135" fill="#ffffff" y2="136" stroke="#000000" x1="90" x2="86">
-                            <showIf value="Standard Loop" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="0" y1="135" fill="#ffffff" y2="132" stroke="#000000" x1="90" x2="87">
-                            <showIf value="Standard Loop" property="loopType" sign="="/>
-                        </line>
-                        <polygon fill="#000000" stroke="#000000" stroke-style="solid" stroke-width="1" n="3" y1="125" y2="115" y3="135" fill-style="none" x1="110" x2="125" x3="125">
-                            <showIf value="true" property="isForCompensation" sign="="/>
-                        </polygon>
-                        <polygon fill="#000000" stroke="#000000" stroke-style="solid" stroke-width="1" n="3" x1="125" x2="140" x3="140" fill-style="none" y1="125" y2="115" y3="135">
-                            <showIf value="true" property="isForCompensation" sign="="/>
-                        </polygon>
-                    </picture>
-                    <labels>
-                        <label x="46a" y="55a" textBinded="Text"/>
-                    </labels>
-                    <ports>
-                        <linePort type="TaskLeft">
-                            <start startx="18" starty="45"/>
-                            <end endx="18" endy="115"/>
-                        </linePort>
-                        <linePort type="TaskVertical">
-                            <start startx="45" starty="18"/>
-                            <end endx="165" endy="18"/>
-                        </linePort>
-                        <linePort type="TaskRight">
-                            <start startx="192" starty="45"/>
-                            <end endx="192" endy="115"/>
-                        </linePort>
-                        <linePort type="TaskVertical">
-                            <start startx="45" starty="142"/>
-                            <end endx="165" endy="142"/>
-                        </linePort>
-                    </ports>
-                </graphics>
-                <logic>
-                    <container/>
-                    <properties>
-                        <property type="string" name="text" displayedName="Text"/>
-                        <property type="LoopType" name="loopType" displayedName="Loop Type"/>
-                        <property type="string" name="Name" displayedName="Name"/>
-						<property type="bool" name="isForCompensation" displayedName="isForCompensation">
-							<default>false</default>
-						</property>
-						<property type="string" name="loopCondition" displayedName="Loop Condition"/>
-						<property type="TaskType" name="taskType" displayedName="Task Type">
-							<default>Abstract</default>
-						</property>
-                    </properties>
-                </logic>
-            </node>
             <node name="Subprocess" displayedName="Subprocess">
                 <graphics>
                     <picture sizex="210" sizey="160">
@@ -752,108 +642,6 @@
                     </properties>
                 </logic>
             </node>
-            <node name="EventSubprocess" displayedName="Event Subprocess">
-                <graphics>
-                    <picture sizex="210" sizey="160">
-                        <line fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" y1="45" y2="115" fill-style="none" x1="18" x2="18"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" y1="18" y2="18" fill-style="none" x1="45" x2="165"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" y1="45" y2="115" fill-style="none" x1="192" x2="192"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" y1="142" y2="142" fill-style="none" x1="45" x2="165"/>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" fill-style="none">
-                            <start startx="18" starty="45"/>
-                            <end endx="45" endy="18"/>
-                            <ctrl x="15" y="15"/>
-                        </curve>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" fill-style="none">
-                            <start startx="192" starty="45"/>
-                            <end endx="165" endy="18"/>
-                            <ctrl x="195" y="15"/>
-                        </curve>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" fill-style="none">
-                            <start startx="165" starty="142"/>
-                            <end endx="192" endy="115"/>
-                            <ctrl x="195" y="145"/>
-                        </curve>
-                        <curve fill="#ffffff" stroke="#000000" stroke-style="dash" stroke-width="0" fill-style="none">
-                            <start startx="18" starty="115"/>
-                            <end endx="45" endy="142"/>
-                            <ctrl x="15" y="145"/>
-                        </curve>
-                        <rectangle fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="115" y2="135" fill-style="none" x1="95" x2="115"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="118" y2="132" fill-style="none" x1="105" x2="105"/>
-                        <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="125" y2="125" fill-style="none" x1="98" x2="112"/>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="117" fill="#ffffff" y2="133" stroke="#000000" x1="70" x2="70">
-                            <showIf value="Multiple Instances (Parallel)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="117" fill="#ffffff" y2="133" stroke="#000000" x1="80" x2="80">
-                            <showIf value="Multiple Instances (Parallel)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="117" fill="#ffffff" y2="133" stroke="#000000" x1="90" x2="90">
-                            <showIf value="Multiple Instances (Parallel)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="115" fill="#ffffff" y2="115" stroke="#000000" x1="72" x2="88">
-                            <showIf value="Multiple Instances (Sequential)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="125" fill="#ffffff" y2="125" stroke="#000000" x1="72" x2="88">
-                            <showIf value="Multiple Instances (Sequential)" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="3" y1="135" fill="#ffffff" y2="135" stroke="#000000" x1="72" x2="88">
-                            <showIf value="Multiple Instances (Sequential)" property="loopType" sign="="/>
-                        </line>
-                        <ellipse fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="115" y2="135" fill-style="none" x1="70" x2="90">
-							<showIf value="Standard Loop" property="loopType" sign="="/>
-						</ellipse>
-                        <line stroke-style="solid" fill-style="none" stroke-width="0" y1="135" fill="#ffffff" y2="136" stroke="#000000" x1="80" x2="76">
-                            <showIf value="Standard Loop" property="loopType" sign="="/>
-                        </line>
-                        <line stroke-style="solid" fill-style="none" stroke-width="0" y1="135" fill="#ffffff" y2="132" stroke="#000000" x1="80" x2="77">
-                            <showIf value="Standard Loop" property="loopType" sign="="/>
-                        </line>
-                        <polygon fill="#000000" stroke="#000000" stroke-style="solid" stroke-width="1" n="3" y1="125" y2="115" y3="135" fill-style="none" x1="120" x2="135" x3="135">
-                            <showIf value="true" property="isForCompensation" sign="="/>
-                        </polygon>
-                        <polygon fill="#000000" stroke="#000000" stroke-style="solid" stroke-width="1" n="3" x1="135" x2="150" x3="150" fill-style="none" y1="125" y2="115" y3="135">
-                            <showIf value="true" property="isForCompensation" sign="="/>
-                        </polygon>
-                    </picture>
-                    <labels>
-                        <label x="46a" y="55a" textBinded="Text"/>
-                    </labels>
-                    <ports>
-                        <linePort type="EventSubprocessLeft">
-                            <start startx="18" starty="45"/>
-                            <end endx="18" endy="115"/>
-                        </linePort>
-                        <linePort type="EventSubprocessVertical">
-                            <start startx="45" starty="18"/>
-                            <end endx="165" endy="18"/>
-                        </linePort>
-                        <linePort type="EventSubprocessRight">
-                            <start startx="192" starty="45"/>
-                            <end endx="192" endy="115"/>
-                        </linePort>
-                        <linePort type="EventSubprocessVertical">
-                            <start startx="45" starty="142"/>
-                            <end endx="165" endy="142"/>
-                        </linePort>
-                    </ports>
-                </graphics>
-                <logic>
-                    <container/>
-                    <explodesTo>
-                        <target type="BPMNDiagramNode" makeReusable="false" requireImmediateLinkage="false"/>
-                    </explodesTo>
-                    <properties>
-                        <property type="string" name="text" displayedName="Text"/>
-                        <property type="LoopType" name="loopType" displayedName="Loop Type"/>
-                        <property type="string" name="Name" displayedName="Name"/>
-						<property type="bool" name="isForCompensation" displayedName="isForCompensation">
-							<default>false</default>
-						</property>
-						<property type="string" name="loopCondition" displayedName="Loop Condition"/>
-                    </properties>
-                </logic>
-            </node>
 			<node name="DataObject" displayedName="Data Object">
 				<graphics>
 					<picture sizex="50" sizey="80">
@@ -937,8 +725,6 @@
                         <port type="StartEventVertical"/>
                         <port type="IntermediateEventVertical"/>
                         <port type="IntermediateEventRight"/>
-                        <port type="TaskRight"/>
-                        <port type="TaskVertical"/>
                         <port type="SubprocessRight"/>
                         <port type="SubprocessVertical"/>
                         <port type="GatewayVertical"/>
@@ -947,8 +733,6 @@
                     <toPorts>
                         <port type="IntermediateEventVertical"/>
                         <port type="IntermediateEventLeft"/>
-                        <port type="TaskLeft"/>
-                        <port type="TaskVertical"/>
                         <port type="SubprocessLeft"/>
                         <port type="SubprocessVertical"/>
                         <port type="GatewayVertical"/>
@@ -960,27 +744,18 @@
                         <possibleEdge beginName="StartEventRight" directed="true" endName="IntermediateEventLeft"/>
                         <possibleEdge beginName="StartEventRight" directed="true" endName="EndEventLeft"/>
                         <possibleEdge beginName="StartEventRight" directed="true" endName="GatewayLeft"/>
-                        <possibleEdge beginName="StartEventRight" directed="true" endName="TaskLeft"/>
                         <possibleEdge beginName="StartEventRight" directed="true" endName="SubprocessLeft"/>
                         <possibleEdge beginName="IntermediateEventRight" directed="true" endName="IntermediateEventLeft"/>
                         <possibleEdge beginName="IntermediateEventRight" directed="true" endName="EndEventLeft"/>
                         <possibleEdge beginName="IntermediateEventRight" directed="true" endName="GatewayLeft"/>
-                        <possibleEdge beginName="IntermediateEventRight" directed="true" endName="TaskLeft"/>
                         <possibleEdge beginName="IntermediateEventRight" directed="true" endName="SubprocessLeft"/>
-                        <possibleEdge beginName="TaskRight" directed="true" endName="IntermediateEventLeft"/>
                         <possibleEdge beginName="SubprocessRight" directed="true" endName="IntermediateEventLeft"/>
-                        <possibleEdge beginName="TaskRight" directed="true" endName="EndEventLeft"/>
                         <possibleEdge beginName="SubprocessRight" directed="true" endName="EndEventLeft"/>
-                        <possibleEdge beginName="TaskRight" directed="true" endName="GatewayLeft"/>
                         <possibleEdge beginName="SubprocessRight" directed="true" endName="GatewayLeft"/>
-                        <possibleEdge beginName="TaskRight" directed="true" endName="TaskLeft"/>
-                        <possibleEdge beginName="SubprocessRight" directed="true" endName="TaskLeft"/>
-                        <possibleEdge beginName="TaskRight" directed="true" endName="SubprocessLeft"/>
                         <possibleEdge beginName="SubprocessRight" directed="true" endName="SubprocessLeft"/>
                         <possibleEdge beginName="GatewayRight" directed="true" endName="IntermediateEventLeft"/>
                         <possibleEdge beginName="GatewayRight" directed="true" endName="EndEventLeft"/>
                         <possibleEdge beginName="GatewayRight" directed="true" endName="GatewayLeft"/>
-                        <possibleEdge beginName="GatewayRight" directed="true" endName="TaskLeft"/>
                         <possibleEdge beginName="GatewayRight" directed="true" endName="SubprocessLeft"/>
                     </possibleEdges>
                 </logic>
@@ -1002,13 +777,11 @@
                     <fromPorts>
                         <port type="IntermediateEventVertical"/>
                         <port type="EndEventVertical"/>
-                        <port type="TaskVertical"/>
                         <port type="SubprocessVertical"/>
                     </fromPorts>
                     <toPorts>
                         <port type="IntermediateEventVertical"/>
                         <port type="StartEventVertical"/>
-                        <port type="TaskVertical"/>
                         <port type="SubprocessVertical"/>
                     </toPorts>
                     <possibleEdges/>
@@ -1029,21 +802,13 @@
                         <property type="string" displayedName="Text" name="Text"/>
                     </properties>
                     <fromPorts>
-                        <port type="TaskVertical"/>
-                        <port type="TaskLeft"/>
-                        <port type="TaskRight"/>
                         <port type="SubprocessVertical"/>
                         <port type="SubprocessLeft"/>
                         <port type="SubprocessRight"/>
-                        <port type="EventSubprocessVertical"/>
-                        <port type="EventSubprocessLeft"/>
-                        <port type="EventSubprocessRight"/>
                     </fromPorts>
                     <toPorts>
                         <port type="IntermediateEventVertical"/>
                         <port type="IntermediateEventLeft"/>
-                        <port type="TaskLeft"/>
-                        <port type="TaskVertical"/>
                         <port type="SubprocessVertical"/>
                         <port type="SubprocessLeft"/>
                         <port type="GatewayVertical"/>
@@ -1068,21 +833,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                       <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="GatewayVertical"/>
@@ -1107,21 +864,13 @@
                         <property type="string" displayedName="Text" name="Text"/>
                     </properties>
                     <fromPorts>
-                        <port type="TaskVertical"/>
-                        <port type="TaskLeft"/>
-                        <port type="TaskRight"/>
                         <port type="SubprocessVertical"/>
                         <port type="SubprocessLeft"/>
                         <port type="SubprocessRight"/>
-                        <port type="EventSubprocessVertical"/>
-                        <port type="EventSubprocessLeft"/>
-                        <port type="EventSubprocessRight"/>
                     </fromPorts>
                     <toPorts>
                         <port type="IntermediateEventVertical"/>
                         <port type="IntermediateEventLeft"/>
-                        <port type="TaskLeft"/>
-                        <port type="TaskVertical"/>
                         <port type="SubprocessLeft"/>
                         <port type="SubprocessVertical"/>
                         <port type="GatewayVertical"/>
@@ -1146,21 +895,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1185,21 +926,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1224,21 +957,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1263,21 +988,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1302,21 +1019,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1341,21 +1050,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1387,8 +1088,6 @@
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1413,19 +1112,11 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                    </toPorts>
@@ -1446,21 +1137,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1485,21 +1168,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1524,21 +1199,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1563,21 +1230,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1602,21 +1261,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1641,21 +1292,13 @@
                        <property type="string" displayedName="Text" name="Text"/>
                    </properties>
                    <fromPorts>
-                       <port type="TaskVertical"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskRight"/>
                        <port type="SubprocessVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessRight"/>
-                       <port type="EventSubprocessVertical"/>
-                       <port type="EventSubprocessLeft"/>
-                       <port type="EventSubprocessRight"/>
                    </fromPorts>
                    <toPorts>
                        <port type="IntermediateEventVertical"/>
                        <port type="IntermediateEventLeft"/>
-                       <port type="TaskLeft"/>
-                       <port type="TaskVertical"/>
                        <port type="SubprocessLeft"/>
                        <port type="SubprocessVertical"/>
                        <port type="GatewayVertical"/>
@@ -1681,7 +1324,6 @@
                         <contains type="StartEvent"/>
                         <contains type="IntermediateEvent"/>
                         <contains type="Gateway"/>
-                        <contains type="Task"/>
                         <contains type="Subprocess"/>
                     </container>
                     <properties>
@@ -1744,9 +1386,7 @@
                 <element name="Gateway"/>
             </group>
             <group name="Activities">
-                <element name="Task"/>
                 <element name="Subprocess"/>
-				<element name="EventSubprocess"/>
             </group>
             <group name="Flows">
                 <element name="SequenceFlow"/>
