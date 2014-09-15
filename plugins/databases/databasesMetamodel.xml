@@ -155,7 +155,7 @@
                     </properties>
                 </logic>
             </node>
-            <edge name="OneToOneRelationship" displayedName="One-to-one">
+			<edge name="ManyToManyRelationship" displayedName="Many-to-many">
                 <graphics>
                     <lineType type="solidLine"/>
                     <labels>
@@ -168,10 +168,8 @@
                         <association endName="end" beginName="start"/>
                     </associations>
                     <properties>
-                        <property type="string" displayedName="Text" name="Text"/>
                         <property type="string" displayedName="Name" name="Name"/>
 						<property type="bool" displayedName="Default" name="default"/>
-						<property type="string" displayedName="Condition" name="condition"/>
                     </properties>
                     <fromPorts>
                         <port type="EntityRight"/>
@@ -180,15 +178,20 @@
                     </fromPorts>
                     <toPorts>
 						<port type="EntityRight"/>
-                        <port type="EntityLeft"/>
                         <port type="EntityVertical"/>
+						<port type="EntityLeft"/>
                     </toPorts>
                     <possibleEdges>
                         <possibleEdge beginName="EntityRight" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityRight"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityVertical" directed="true" endName="EntityVertical"/>
                     </possibleEdges>
                 </logic>
             </edge>
-          <edge name="TimerBoundaryEvent" displayedName="Timer (Interrupting)">
+            <edge name="OneToManyRelationship" displayedName="One-to-many">
                 <graphics>
                     <lineType type="solidLine"/>
                     <labels>
@@ -196,29 +199,106 @@
                     </labels>
                 </graphics>
                 <logic>
-                    <associations endType="filled_arrow" beginType="timer">
+                    <dividability isDividable="true"/>
+                    <associations endType="no_arrow" beginType="filled_arrow">
                         <association endName="end" beginName="start"/>
                     </associations>
                     <properties>
-                        <property type="string" displayedName="Text" name="Text"/>
+                        <property type="string" displayedName="Name" name="Name"/>
+						<property type="bool" displayedName="Default" name="default"/>
                     </properties>
                     <fromPorts>
-                        <port type="EntityVertical"/>
-                        <port type="EntityLeft"/>
                         <port type="EntityRight"/>
+                        <port type="EntityVertical"/>
+						<port type="EntityLeft"/>
                     </fromPorts>
                     <toPorts>
-                        <port type="IntermediateEventVertical"/>
-                        <port type="IntermediateEventLeft"/>
-                        <port type="EntityLeft"/>
+						<port type="EntityRight"/>
                         <port type="EntityVertical"/>
-                        <port type="GatewayVertical"/>
-                        <port type="GatewayLeft"/>
-                        <port type="EndEventLeft"/>
-                        <port type="EndEventVertical"/>
+						<port type="EntityLeft"/>
                     </toPorts>
+                    <possibleEdges>
+                        <possibleEdge beginName="EntityRight" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityRight"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityVertical" directed="true" endName="EntityVertical"/>
+                    </possibleEdges>
                 </logic>
-          </edge>
+            </edge>
+			<edge name="OneToManyRelationship" displayedName="One-to-many">
+                <graphics>
+                    <lineType type="solidLine"/>
+                    <labels>
+                        <label textBinded="Text"/>
+                    </labels>
+                </graphics>
+                <logic>
+                    <dividability isDividable="true"/>
+                    <associations endType="filled_arrow" beginType="filled_arrow">
+                        <association endName="end" beginName="start"/>
+                    </associations>
+                    <properties>
+                        <property type="string" displayedName="Name" name="Name"/>
+						<property type="bool" displayedName="Default" name="default"/>
+                    </properties>
+                    <fromPorts>
+                        <port type="EntityRight"/>
+                        <port type="EntityVertical"/>
+						<port type="EntityLeft"/>
+                    </fromPorts>
+                    <toPorts>
+						<port type="EntityRight"/>
+                        <port type="EntityVertical"/>
+						<port type="EntityLeft"/>
+                    </toPorts>
+                    <possibleEdges>
+                        <possibleEdge beginName="EntityRight" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityRight"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityVertical" directed="true" endName="EntityVertical"/>
+                    </possibleEdges>
+                </logic>
+            </edge>
+			<edge name="OneToOneRelationship" displayedName="One-to-one">
+                <graphics>
+                    <lineType type="solidLine"/>
+                    <labels>
+                        <label textBinded="Text"/>
+                    </labels>
+                </graphics>
+                <logic>
+                    <dividability isDividable="true"/>
+                    <associations endType="filled_arrow" beginType="filled_arrow">
+                        <association endName="end" beginName="start"/>
+                    </associations>
+                    <properties>
+                        <property type="string" displayedName="Name" name="Name"/>
+						<property type="bool" displayedName="Default" name="default"/>
+                    </properties>
+                    <fromPorts>
+                        <port type="EntityRight"/>
+                        <port type="EntityVertical"/>
+						<port type="EntityLeft"/>
+                    </fromPorts>
+                    <toPorts>
+						<port type="EntityRight"/>
+                        <port type="EntityVertical"/>
+						<port type="EntityLeft"/>
+                    </toPorts>
+                    <possibleEdges>
+                        <possibleEdge beginName="EntityRight" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityRight"/>
+						<possibleEdge beginName="EntityRight" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityLeft"/>
+						<possibleEdge beginName="EntityLeft" directed="true" endName="EntityVertical"/>
+						<possibleEdge beginName="EntityVertical" directed="true" endName="EntityVertical"/>
+                    </possibleEdges>
+                </logic>
+            </edge>
         </graphicTypes>
         <palette>
             <group name="Entities">
@@ -226,7 +306,8 @@
             </group>
             <group name="Relationships">
                 <element name="OneToOneRelationship"/>
-				<element name="TimerBoundaryEvent"/>
+				<element name="OneToManyRelationship"/>
+				<element name="ManyToManyRelationship"/>
 			</group>
         </palette>
     </diagram>
