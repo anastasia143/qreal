@@ -421,6 +421,16 @@ void EdgeType::generateEdgeStyle(QString const &styleString, OutFile &out)
 		out() << "\t\t\tpainter->drawEllipse(-5, 0, 10, 10);\n";
 	}
 
+	if (style == "one_relationship") {
+	}
+
+	if (style == "many_relationship") {
+		out() << "\t\t\tstatic const QPointF points[] = {\n"
+		"\t\t\t\tQPointF(-7,0),\n\t\t\t\tQPointF(0,15),\n\t\t\t\tQPointF(7,0)\n\t\t\t};\n"
+		"\t\t\tpainter->drawPolyline(points, 3);\n";
+		out() << "\t\t\tpainter->drawEllipse(-5, 15, 10, 10);\n";
+	}
+
 	if (bpmnEdges.contains(style)) {
 		QStringList parts = style.split('_');
 		out() << "\t\t\tpainter->save();\n";
@@ -524,7 +534,6 @@ void EdgeType::generateEdgeStyle(QString const &styleString, OutFile &out)
 					 "\n\t\t\t\tQPointF(-12, 17)\n\t\t\t};\n"
 					 "\t\t\tpainter->drawPolyline(points, 13);\n";
 		}
-
 		out() << "\t\t\tpainter->restore();\n";
 	}
 
