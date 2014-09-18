@@ -3,104 +3,15 @@
     <namespace>UML 2.0</namespace>
     <diagram nodeName="Databases" name="Databases" displayedName="Databases">
         <nonGraphicTypes>
-            <port name="StartEventLeft"/>
-            <port name="StartEventVertical"/>
-            <port name="StartEventRight"/>
-            <port name="IntermediateEventLeft"/>
-            <port name="IntermediateEventVertical"/>
-            <port name="IntermediateEventRight"/>
-            <port name="EndEventLeft"/>
-            <port name="EndEventVertical"/>
-            <port name="EndEventRight"/>
-            <port name="GatewayLeft"/>
-            <port name="GatewayVertical"/>
-            <port name="GatewayRight"/>
             <port name="EntityLeft"/>
             <port name="EntityVertical"/>
             <port name="EntityRight"/>
-			<port name="DataLeft"/>
-			<port name="DataVertical"/>
-			<port name="DataRight"/>
-            <enum name="StartEventType" displayedName="Start Event Type">
-                <value>None</value>
-                <value>Message</value>
-                <value>Timer</value>
-                <value>Conditional</value>
-				<value>Error</value>
-				<value>Escalation</value>
-				<value>Compensation</value>
-				<value>Signal</value>
-                <value>Multiple</value>
-                <value>Parallel Multiple</value>
-            </enum>
-            <enum name="StartEventNonInterruptingType" displayedName="Non-Interrupting Start Event Type">
-                <value>None</value>
-                <value>Message</value>
-                <value>Timer</value>
-                <value>Conditional</value>
-				<value>Escalation</value>
-				<value>Signal</value>
-                <value>Parallel Multiple</value>
-                <value>Multiple</value>
-            </enum>
-            <enum name="IntermediateEventType" displayedName="Intermediate Event Type">
-                <value>None</value>
-                <value>Receive Message</value>
-                <value>Send Message</value>
-                <value>Timer</value>
-                <value>Conditional</value>
-                <value>Multiple Catch</value>
-                <value>Multiple Throw</value>
-                <value>Catch Signal</value>
-                <value>Throw Signal</value>
-                <value>Catch Link</value>
-                <value>Throw Link</value>
-                <value>Compensation</value>
-                <value>Escalation</value>
-                <value>Parallel Multiple (Catch)</value>
-            </enum>
-            <enum name="EndEventType" displayedName="End Event Type">
-                <value>None</value>
-                <value>Message</value>
-                <value>Terminate</value>
-                <value>Error</value>
-                <value>Escalation</value>
-                <value>Cancel</value>
-                <value>Compensation</value>
-                <value>Multiple</value>
-                <value>Signal</value>
-            </enum>
-            <enum name="GatewayType" displayedName="Gateway Type">
-                <value>Exclusive (Data Based)</value>
-                <value>Exclusive (Event Based)</value>
-                <value>Inclusive</value>
-                <value>Parallel</value>
-				<value>Complex</value>
-            </enum>
-            <enum name="LoopType" displayedName="Loop Type">
-                <value>No Loop</value>
-                <value>Multiple Instances (Parallel)</value>
-                <value>Multiple Instances (Sequential)</value>
-				<value>Standard Loop</value>
-            </enum>
-            <enum name="TaskType" displayedName="Task Type">
-				<value>Abstract</value>
-				<value>Service</value>
-				<value>Send</value>
-				<value>Receive</value>
-				<value>User</value>
-				<value>Manual</value>
-				<value>Business Rule</value>
-				<value>Script</value>
-			</enum>
         </nonGraphicTypes>
         <graphicTypes>
             <node name="Entity" displayedName="Entity">
                 <graphics>
                     <picture sizex="160" sizey="90">
 						<rectangle stroke-style="solid" stroke="#000000" y1="0" stroke-width="0" x1="0" y2="90" x2="160"/>
-                    
- 
                         <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="145" y2="145" fill-style="none" x1="42" x2="168">
 							<showIf value="true" property="transaction" sign="="/>
 						</line>
@@ -110,7 +21,6 @@
                             <ctrl x="13" y="13"/>
 							<showIf value="true" property="transaction" sign="="/>
                         </curve>
- 
                     </picture>
                     <labels>
                         <label x="10a" y="10a" textBinded="Text"/>
@@ -135,7 +45,9 @@
                     </ports>
                 </graphics>
                 <logic>
-                    <container/>
+				    <container>
+                         <contains type="Databases::Attribute"/>
+                    </container>
                     <explodesTo>
                         <target type="BPMNDiagramNode" makeReusable="false" requireImmediateLinkage="false"/>
                     </explodesTo>
@@ -152,6 +64,35 @@
 						<property type="bool" name="transaction" displayedName="Transaction">
 							<default>false</default>
 						</property>
+                    </properties>
+                </logic>
+            </node>
+			<node name="Attribute" displayedName="Attribute">
+                <graphics>
+                    <picture sizex="160" sizey="90">
+						<rectangle stroke-style="solid" stroke="#000000" y1="0" stroke-width="0" x1="0" y2="90" x2="160"/>
+                        <line fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" y1="145" y2="145" fill-style="none" x1="42" x2="168">
+							<showIf value="true" property="transaction" sign="="/>
+						</line>
+                        <curve fill="#ffffff" stroke="#000000" stroke-style="solid" stroke-width="0" fill-style="none">
+                            <start startx="15" starty="42"/>
+                            <end endx="42" endy="15"/>
+                            <ctrl x="13" y="13"/>
+							<showIf value="true" property="transaction" sign="="/>
+                        </curve>
+                    </picture>
+                    <labels>
+                        <label x="10a" y="10a" textBinded="Text"/>
+                    </labels>
+                    <ports>
+                    </ports>
+                </graphics>
+                <logic>
+                    <explodesTo>
+                        <target type="BPMNDiagramNode" makeReusable="false" requireImmediateLinkage="false"/>
+                    </explodesTo>
+                    <properties>
+                        <property type="string" name="Text" displayedName="Text"/>
                     </properties>
                 </logic>
             </node>
@@ -265,8 +206,9 @@
             </edge>
         </graphicTypes>
         <palette>
-            <group name="Entities">
+            <group name="Entities and attributes">
                 <element name="Entity"/>
+				<element name="Attribute"/>
             </group>
             <group name="Relationships">
                 <element name="OneToOneRelationship"/>
