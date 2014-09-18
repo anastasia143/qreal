@@ -422,9 +422,22 @@ void EdgeType::generateEdgeStyle(QString const &styleString, OutFile &out)
 	}
 
 	if (style == "one_relationship") {
+		out() << "\t\t\tQPen pen;\n"
+				 "\t\t\tpen.setWidth(1);\n"
+				 "\t\t\tpainter->setPen(pen);\n";
+		out() << "\t\t\tstatic const QPointF points[] = {\n"
+		"\t\t\t\tQPointF(-7,10),\n\t\t\t\tQPointF(7,10)\n\t\t\t};\n"
+		"\t\t\tpainter->drawPolyline(points, 2);\n";
+
+		out() << "\t\t\tstatic const QPointF points2[] = {\n"
+		"\t\t\t\tQPointF(-7,18),\n\t\t\t\tQPointF(7,18)\n\t\t\t};\n"
+		"\t\t\tpainter->drawPolyline(points2, 2);\n";
 	}
 
 	if (style == "many_relationship") {
+		out() << "\t\t\tQPen pen;\n"
+				 "\t\t\tpen.setWidth(1);\n"
+				 "\t\t\tpainter->setPen(pen);\n";
 		out() << "\t\t\tstatic const QPointF points[] = {\n"
 		"\t\t\t\tQPointF(-7,0),\n\t\t\t\tQPointF(0,15),\n\t\t\t\tQPointF(7,0)\n\t\t\t};\n"
 		"\t\t\tpainter->drawPolyline(points, 3);\n";
