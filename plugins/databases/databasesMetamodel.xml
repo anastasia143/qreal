@@ -6,6 +6,19 @@
             <port name="EntityLeft"/>
             <port name="EntityVertical"/>
             <port name="EntityRight"/>
+			<enum name="DataType" displayedName="Data Type">
+                <value>bigint</value>
+                <value>int</value>
+                <value>numeric</value>
+				<value>smallint</value>
+				<value>smallmoney</value>
+				<value>tinyint</value>
+				<value>money</value>
+				<value>float</value>
+				<value>real</value>
+				<value>smallmoney</value>
+				<value>string</value>
+            </enum>
         </nonGraphicTypes>
         <graphicTypes>
             <node name="Entity" displayedName="Entity">
@@ -48,19 +61,8 @@
 				    <container>
                          <contains type="Databases::Attribute"/>
                     </container>
-                    <explodesTo>
-                        <target type="BPMNDiagramNode" makeReusable="false" requireImmediateLinkage="false"/>
-                    </explodesTo>
                     <properties>
                         <property type="string" name="Text" displayedName="Text"/>
-                        <property type="LoopType" name="loopType" displayedName="Loop Type"/>
-						<property type="bool" name="isForCompensation" displayedName="isForCompensation">
-							<default>false</default>
-						</property>
-						<property type="bool" name="adHoc" displayedName="ad Hoc">
-							<default>false</default>
-						</property>
-						<property type="string" name="loopCondition" displayedName="Loop Condition"/>
 						<property type="bool" name="transaction" displayedName="Transaction">
 							<default>false</default>
 						</property>
@@ -82,7 +84,7 @@
                         </curve>
                     </picture>
                     <labels>
-                        <label x="10a" y="10a" textBinded="Text"/>
+                        <label x="10a" y="10a" textBinded="Name"/>
                     </labels>
                     <ports>
                     </ports>
@@ -92,7 +94,10 @@
                         <target type="BPMNDiagramNode" makeReusable="false" requireImmediateLinkage="false"/>
                     </explodesTo>
                     <properties>
-                        <property type="string" name="Text" displayedName="Text"/>
+                        <property type="string" name="Name" displayedName="Name"/>
+						<property type="bool" name="isPrimaryKey" displayedName="Primary Key"/>
+						<property type="bool" name="isKey" displayedName="Key"/>
+						<property type="DataType" name="DataType" displayedName="Data Type"/>
                     </properties>
                 </logic>
             </node>
