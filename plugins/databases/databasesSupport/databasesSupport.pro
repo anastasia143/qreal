@@ -10,10 +10,12 @@ RCC_DIR = .moc
 LIBS += -L../../../bin -lqrkernel -lqrutils
 
 HEADERS += \
-    databasesSupportPlugin.h
+    databasesSupportPlugin.h \
+    databasesPreferencesPage.h
 
 SOURCES += \
-	databasesSupportPlugin.cpp
+	databasesSupportPlugin.cpp \
+    databasesPreferencesPage.cpp
 
 OTHER_FILES += \
     databasesSupport.pri

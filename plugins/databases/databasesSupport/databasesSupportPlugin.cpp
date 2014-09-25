@@ -1,19 +1,38 @@
 #include "databasesSupportPlugin.h"
 
 namespace qReal {
-namespace databasesSupportPlugin {
+namespace databasesSupport {
 
-DatabasesSupportPlugin::DatabasesSupportPlugin(QObject *parent) :
-	QObject(parent)
+DatabasesSupportPlugin::DatabasesSupportPlugin()
+	: mPreferencesPage(new DatabasesPreferencesPage())
 {
+}
+
+DatabasesSupportPlugin::~DatabasesSupportPlugin()
+{
+	delete mPreferencesPage;
 }
 
 
 void DatabasesSupportPlugin::init(PluginConfigurator const &configurator)
 {
 	//mVisualDebugSupport = new VisualDebugSupport(configurator);
-	//initActions();
+	initActions();
 }
 
+QPair<QString, PreferencesPage *> DatabasesSupportPlugin::preferencesPage()
+{
+	return qMakePair(tr("Databases"), static_cast<PreferencesPage*>(mPreferencesPage));
+}
+
+/*qReal::Customizer* ViewInteraction::customizationInterface()
+{
+	return &mCustomizer;
+}*/
+
+void DatabasesSupportPlugin::initActions()
+{
+
+}
 }
 }
