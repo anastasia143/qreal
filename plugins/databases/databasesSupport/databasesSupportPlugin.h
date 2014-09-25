@@ -4,6 +4,7 @@
 #include "../../../qrgui/toolPluginInterface/toolPluginInterface.h"
 #include "../../../qrgui/toolPluginInterface/pluginConfigurator.h"
 #include "databasesPreferencesPage.h"
+#include "databasesCustomizer.h"
 
 namespace qReal {
 namespace databasesSupport {
@@ -19,7 +20,7 @@ public:
 	virtual void init(qReal::PluginConfigurator const &configurator);
 
 	virtual QPair<QString, PreferencesPage *> preferencesPage();
-	//virtual qReal::Customizer* customizationInterface();
+	virtual qReal::Customizer* customizationInterface();
 	//virtual QList<qReal::ActionInfo> actions();
 signals:
 
@@ -27,6 +28,7 @@ public slots:
 
 private:
 	DatabasesPreferencesPage *mPreferencesPage;
+	DatabasesCustomizer mCustomizer;
 	void initActions();
 
 };

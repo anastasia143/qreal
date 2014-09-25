@@ -25,10 +25,10 @@ QPair<QString, PreferencesPage *> DatabasesSupportPlugin::preferencesPage()
 	return qMakePair(tr("Databases"), static_cast<PreferencesPage*>(mPreferencesPage));
 }
 
-/*qReal::Customizer* ViewInteraction::customizationInterface()
+qReal::Customizer* DatabasesSupportPlugin::customizationInterface()
 {
 	return &mCustomizer;
-}*/
+}
 
 void DatabasesSupportPlugin::initActions()
 {

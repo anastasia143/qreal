@@ -11,11 +11,13 @@ LIBS += -L../../../bin -lqrkernel -lqrutils
 
 HEADERS += \
     databasesSupportPlugin.h \
-    databasesPreferencesPage.h
+    databasesPreferencesPage.h \
+    databasesCustomizer.h
 
 SOURCES += \
 	databasesSupportPlugin.cpp \
-    databasesPreferencesPage.cpp
+    databasesPreferencesPage.cpp \
+    databasesCustomizer.cpp
 
 OTHER_FILES += \
     databasesSupport.pri
