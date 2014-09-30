@@ -57,6 +57,8 @@ EditorViewScene::EditorViewScene(QObject *parent)
 	connect(mTimer, SIGNAL(timeout()), this, SLOT(getObjectByGesture()));
 	connect(mTimerForArrowButtons, SIGNAL(timeout()), this, SLOT(updateMovedElements()));
 	connect(this, SIGNAL(selectionChanged()), this, SLOT(deselectLabels()));
+	mAddAttribute = new QAction(tr("Add attribute"), NULL);
+	connect(mAddAttribute, SIGNAL(triggered()), this, SLOT(addAttributeToEntity()));
 }
 
 void EditorViewScene::addItem(QGraphicsItem *item)
@@ -930,6 +932,7 @@ void EditorViewScene::initContextMenu(Element *e, const QPointF &pos)
 	disableActions(e);
 	mContextMenu.clear();
 	mContextMenu.addActions(mContextMenuActions);
+	mContextMenu.addAction(mAddAttribute);
 
 	QSignalMapper *createChildMapper = nullptr;
 	if (e) {
@@ -1522,4 +1525,15 @@ void EditorViewScene::deselectLabels()
 			label->clearMoveFlag();
 		}
 	}
+}
+
+qReal::Id EditorViewScene::addAttributeToEntity()
+{
+	qReal::Id id = qReal::Id::createElementId("Databases", "DatabasesMetamodel", "Attribute");
+
+	utils::UXInfo::reportCreation(id.editor(), id.element());
+	QLOG_TRACE() << "Created element, id = " << id << ", position = " << QPointF(371.0, 278.0);
+
+	createSingleElement(id, "Attribute", true, QPointF(371.0, 278.0));
+	return id;
 }
