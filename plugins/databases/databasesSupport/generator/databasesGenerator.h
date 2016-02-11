@@ -128,7 +128,7 @@ private:
 	QString mDbms;
 	int **mRelMatrix; // Relationship matrix
 	DatabasesPreferencesPage const *mPreferencesPage;
-	gui::MainWindowInterpretersInterface &mMainWindowInterface;
+	qReal::gui::MainWindowInterpretersInterface &mMainWindowInterface;
 	qReal::ErrorReporterInterface *mErrorReporter;
 };
 

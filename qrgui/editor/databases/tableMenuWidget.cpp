@@ -3,8 +3,8 @@
 #include "editorViewScene.h"
 
 namespace qReal {
-
-class EditorViewScene;
+namespace gui {
+namespace editor {
 
 TableMenuWidget::TableMenuWidget(const Id &id, EditorViewScene *editorViewScene, QWidget *parent)
 	: QDialog(parent)
@@ -431,4 +431,6 @@ void TableMenuWidget::fillColumnProperties()
 	}
 }
 
+}
+}
 }
